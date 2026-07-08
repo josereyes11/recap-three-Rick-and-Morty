@@ -22,3 +22,8 @@ async function fetchCharacters() {
 }
 
 fetchCharacters();
+
+import { createCharacterCard } from "./components/CharacterCard/CharacterCard.js";
+
+const card = createCharacterCard();
+cardContainer.append(card);
