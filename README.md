@@ -75,7 +75,7 @@ Right now, the `CharacterCard` function always returns the character Rick Sanche
 
 Great Job! But we want to see not only 20 characters, we want all of them! So lets implement the pagination.
 
-- By adding the stringInde `?page=<pagex>` to the end of the fetch URL, you can receive the respective page of characters.
+- By adding the string `?page=<pageIndex>` to the end of the fetch URL, you can receive the respective page of characters.
 - Use the state variable `page` to keep track of the current page index.
 - Inside of the `info` part of the received data you can find the max page count.
 - Add an event listener on each of the next and prev buttons which do the following:
