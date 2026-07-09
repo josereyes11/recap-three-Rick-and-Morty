@@ -10,7 +10,7 @@
 }
 
 :root {
-  --color-primary: rgb(51, 51, 51);
+  --color-primary: #000;
   --color-secondary: #f6f6f6;
   --font-family: system-ui;
 }

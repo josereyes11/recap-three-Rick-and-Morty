@@ -9,6 +9,8 @@ const searchBarContainer = document.querySelector(
 );
 const navigation = document.querySelector('[data-js="navigation"]');
 
+const logo = document.querySelector('[data-js="logo"]');
+
 // States
 let maxPage = 1;
 let page = 1;
@@ -82,11 +84,28 @@ const nextButton = NavButton({
 
 const searchBar = SearchBar({
   onSubmit: handleSearchSumit,
+  onClear: handleClear,
 });
 
 /* - Append the created components at the right places in your HTML. All container elements are already
   available in the `index.js`. */
 navigation.append(prevButton, pagination, nextButton);
 searchBarContainer.append(searchBar);
+
+// logo back home
+logo.addEventListener("click", () => {
+  searchBar.reset();
+  page = 1;
+  searchQuery = "";
+  fetchCharacters();
+});
+
+// clear search bar
+
+function handleClear() {
+  searchQuery = "";
+  page = 1;
+  fetchCharacters();
+}
 
 fetchCharacters();
