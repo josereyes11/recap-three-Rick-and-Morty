@@ -2,6 +2,10 @@
   height: 30px;
   display: grid;
   grid-template-columns: 100px 100px 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
 }
 
 .navigation__pagination {
