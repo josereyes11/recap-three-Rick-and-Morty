@@ -37,6 +37,10 @@
   align-items: center;
 }
 
+.search-bar__clear-button--hidden {
+  display: none;
+}
+
 .search-bar__input:focus {
   outline: none;
 }

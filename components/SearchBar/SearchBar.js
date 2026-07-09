@@ -24,7 +24,7 @@ export function SearchBar(props) {
   searchBar.classList.add("search-bar");
   searchBar.innerHTML = `
   <input name="query" class="search-bar__input" type="text" placeholder="Search characters" aria-label="character name"/>
-  <button type="button" class="search-bar__clear-button" aria-label="clear search">
+  <button type="button" class="search-bar__clear-button search-bar__clear-button--hidden" aria-label="clear search">
   <img class="search-bar__icon" src="assets/clear__icon.svg" alt=""/>
   </button>
   <button class="search-bar__button" aria-label="search for character">
@@ -35,9 +35,21 @@ export function SearchBar(props) {
   const input = searchBar.querySelector(".search-bar__input");
   const clearButton = searchBar.querySelector(".search-bar__clear-button");
 
+  input.addEventListener("input", () => {
+    clearButton.classList.toggle(
+      "search-bar__clear-button--hidden",
+      input.value === "",
+    );
+  });
+
   clearButton.addEventListener("click", () => {
     input.value = "";
+    clearButton.classList.add("search-bar__clear-button--hidden");
     props.onClear();
+  });
+
+  searchBar.addEventListener("reset", () => {
+    clearButton.classList.add("search-bar__clear-button--hidden");
   });
 
   searchBar.addEventListener("submit", props.onSubmit);
