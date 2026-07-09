@@ -48,6 +48,12 @@
   display: grid;
   grid-template-columns: auto 1fr;
 }
+
+.card__info-title {
+  font-size: 0.8rem;
+  color: var(--color-primary);
+}
+
 .card__content {
   flex: 1;
   padding: 10px 20px 20px;
@@ -58,6 +64,12 @@
 
 .card__info-description {
   text-align: right;
+  font-weight: bold;
+  font-size: 0.9rem;
+  /*   background-color: var(--color-secondary);
+  padding: 4px 8px;
+  border-radius: 4px;
+  width: 100%; */
 }
 
 li {

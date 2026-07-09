@@ -10,9 +10,9 @@
 }
 
 :root {
-  --color-primary: rgb(51, 51, 51);
+  --color-primary: #000;
   --color-secondary: #f6f6f6;
-  --font-family: system-ui;
+  --font-family: Helvetica;
 }
 
 body {
@@ -40,4 +40,48 @@ main {
   display: flex;
   justify-content: center;
   margin: 16px;
+}
+
+.div-disclaimer {
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+}
+
+.disclaimer {
+  color: #00b0c8;
+  font-size: 0.7rem;
+  text-align: center;
+}
+
+.search-bar-container {
+  width: 700px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.card-container {
+  justify-content: center;
+  margin: 0 16px;
+}
+
+@media (max-width: 600px) {
+  .header__logo {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .rm_logo {
+    max-width: 100%;
+  }
+
+  .search-bar-container {
+    width: auto;
+    margin: 0 16px;
+  }
+
+  .card-container {
+    margin: 0 16px;
+  }
 }
