@@ -66,7 +66,7 @@ const pagination = NavPagination();
 const prevButton = NavButton({
   label: "previous",
   modifier: "button--prev",
-  onClick: handlePrevClik,
+  onClick: handlePrevClick,
 });
 
 const nextButton = NavButton({
