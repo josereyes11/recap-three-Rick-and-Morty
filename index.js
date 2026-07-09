@@ -67,3 +67,5 @@ searchBar.addEventListener("submit", (event) => {
 fetchCharacters();
 
 import { createCharacterCard } from "./components/CharacterCard/CharacterCard.js";
+
+// This text is for testing a deployment
