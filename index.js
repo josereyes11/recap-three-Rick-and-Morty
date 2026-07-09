@@ -1,12 +1,13 @@
+import { createCharacterCard } from "./components/CharacterCard/CharacterCard.js";
+import { NavButton } from "./components/NavButton/NavButton.js";
+import { NavPagination } from "./components/NavPagination/NavPagination.js";
+import { SearchBar } from "./components/SearchBar/SearchBar.js";
+
 const cardContainer = document.querySelector('[data-js="card-container"]');
 const searchBarContainer = document.querySelector(
   '[data-js="search-bar-container"]',
 );
-const searchBar = document.querySelector('[data-js="search-bar"]');
 const navigation = document.querySelector('[data-js="navigation"]');
-const prevButton = document.querySelector('[data-js="button-prev"]');
-const nextButton = document.querySelector('[data-js="button-next"]');
-const pagination = document.querySelector('[data-js="pagination"]');
 
 // States
 let maxPage = 1;
@@ -36,36 +37,49 @@ async function fetchCharacters() {
   });
 }
 
-prevButton.addEventListener("click", () => {
+// prevButton.addEventListener("click",
+function handlePrevClick() {
   if (page > 1) {
     page--;
     fetchCharacters();
   }
-});
+}
 
-nextButton.addEventListener("click", () => {
+// nextButton.addEventListener("click",
+function handleNextClick() {
   if (page < maxPage) {
     page++;
     fetchCharacters();
   }
-});
+}
 
-// Add an event listener to searchBar.
-// Prevent default behaviour.
-// Take formData and data variables from handle-form-submit file.
-// Reassign searchQuery with data.query (input name).
-// Reset page to 1 and call fetchCharacters.
-searchBar.addEventListener("submit", (event) => {
+function handleSearchSumit(event) {
   event.preventDefault();
   const formData = new FormData(searchBar);
   const data = Object.fromEntries(formData);
   searchQuery = data.query;
   page = 1;
   fetchCharacters();
+}
+
+const pagination = NavPagination();
+const prevButton = NavButton({
+  label: "previous",
+  modifier: "button--prev",
+  onClick: handlePrevClik,
 });
 
+const nextButton = NavButton({
+  label: "next",
+  modifier: "button--next",
+  onClick: handleNextClick,
+});
+
+const searchBar = SearchBar({
+  onSubmit: handleSearchSumit,
+});
+
+navigation.append(prevButton, pagination, nextButton);
+searchBarContainer.append(searchBar);
+
 fetchCharacters();
-
-import { createCharacterCard } from "./components/CharacterCard/CharacterCard.js";
-
-// This text is for testing a deployment
