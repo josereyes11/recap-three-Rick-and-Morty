@@ -14,6 +14,11 @@ export searchBar.addEventListener("submit", (event) => {
 });
 */
 
+/* - The component functions should be called `SearchBar` and should return the created elements. */
+
+/* - HINT: It is challenging to get the event listener functions right for these components. Use an
+  extra input parameter PROPS `onSubmit` in your components. */
+
 export function SearchBar(props) {
   const searchBar = document.createElement("form");
   searchBar.classList.add("search-bar");
