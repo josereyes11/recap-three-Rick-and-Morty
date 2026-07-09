@@ -37,6 +37,9 @@ async function fetchCharacters() {
   });
 }
 
+/* Use the created functions inside your `index.js` to generate the UI components. You'll need to
+  specify the event listener callback functions here [...] as [...] NAMED FUNCTIONS. */
+
 // prevButton.addEventListener("click",
 function handlePrevClick() {
   if (page > 1) {
@@ -62,6 +65,8 @@ function handleSearchSumit(event) {
   fetchCharacters();
 }
 
+/* Use them as the argument for `onClick` or `onSubmit`, respectively. */
+
 const pagination = NavPagination();
 const prevButton = NavButton({
   label: "previous",
@@ -79,6 +84,8 @@ const searchBar = SearchBar({
   onSubmit: handleSearchSumit,
 });
 
+/* - Append the created components at the right places in your HTML. All container elements are already
+  available in the `index.js`. */
 navigation.append(prevButton, pagination, nextButton);
 searchBarContainer.append(searchBar);
 

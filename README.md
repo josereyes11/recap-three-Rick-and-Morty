@@ -114,7 +114,7 @@ However, we want to tidy up our code so that not everything is written in a sing
   and should return the created elements.
 - HINT: It is challenging to get the event listener functions right for these components. Use an
   extra input parameter `onClick` or `onSubmit` in your components.
-- Use the create functions inside your `index.js` to generate the UI components. You'll need to
+- Use the created functions inside your `index.js` to generate the UI components. You'll need to
   specify the event listener callback functions here either as anonymous arrow functions or as named
   functions. Use them as the argument for `onClick` or `onSubmit`, respectively.
 - Append the created components at the right places in your HTML. All container elements are already
