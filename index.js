@@ -69,13 +69,13 @@ function handleSearchSumit(event) {
 
 const pagination = NavPagination();
 const prevButton = NavButton({
-  label: "previous",
+  label: "Previous",
   modifier: "button--prev",
   onClick: handlePrevClick,
 });
 
 const nextButton = NavButton({
-  label: "next",
+  label: "Next",
   modifier: "button--next",
   onClick: handleNextClick,
 });
