@@ -12,7 +12,7 @@
 :root {
   --color-primary: #000;
   --color-secondary: #f6f6f6;
-  --font-family: Helvetica;
+  --font-family: "Roboto Mono", monospace;
 }
 
 body {
@@ -40,6 +40,7 @@ main {
   display: flex;
   justify-content: center;
   margin: 16px;
+  cursor: pointer;
 }
 
 .div-disclaimer {

@@ -1,11 +1,12 @@
 .navigation {
-  height: 30px;
+  height: auto;
   display: grid;
   grid-template-columns: 100px 100px 100px;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 8px;
+  padding: 24px;
   color: white;
 }
 
