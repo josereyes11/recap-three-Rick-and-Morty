@@ -37,6 +37,8 @@ async function fetchCharacters() {
     const card = createCharacterCard(character);
     cardContainer.append(card);
   });
+
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 /* Use the created functions inside your `index.js` to generate the UI components. You'll need to
