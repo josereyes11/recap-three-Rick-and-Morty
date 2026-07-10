@@ -2,6 +2,7 @@ import { createCharacterCard } from "./components/CharacterCard/CharacterCard.js
 import { NavButton } from "./components/NavButton/NavButton.js";
 import { NavPagination } from "./components/NavPagination/NavPagination.js";
 import { SearchBar } from "./components/SearchBar/SearchBar.js";
+import { StatusFilter } from "./components/StatusFilter/StatusFilter.js";
 
 const cardContainer = document.querySelector('[data-js="card-container"]');
 const searchBarContainer = document.querySelector(
@@ -18,9 +19,14 @@ let searchQuery = "";
 
 const urlRM = "https://rickandmortyapi.com/api/character";
 
+// Imagine you're trying to reach the Rick and Morty API by phone:
 async function fetchCharacters() {
   //?page= + let page
-  const response = await fetch(`${urlRM}?page=${page}&name=${searchQuery}`);
+  //This line is dialing the number:
+  const response = await fetch(
+    `${urlRM}?page=${page}&name=${searchQuery}&status=${statusFilter}`,
+  );
+  // This is you listening to what they say and writing it down:
   const data = await response.json();
 
   // update page and MaxPage const for let. Then reasign maxPage value for:
@@ -28,6 +34,10 @@ async function fetchCharacters() {
 
   //Update content for pagination with .textContent plus a literal template
   pagination.textContent = `${page} / ${maxPage}`;
+
+  //disable previous and next buttons style
+  prevButton.disabled = page <= 1;
+  nextButton.disabled = page >= maxPage;
 
   //cardContainer is emptied every time new characters are fetched
   cardContainer.innerHTML = "";
@@ -109,5 +119,18 @@ function handleClear() {
   page = 1;
   fetchCharacters();
 }
+
+// Filter
+const filterContainer = document.querySelector('[data-js="filter-container"]');
+let statusFilter = "";
+
+function handleStatusChange(value) {
+  statusFilter = value;
+  page = 1;
+  fetchCharacters();
+}
+
+const statusFilterBar = StatusFilter({ onChange: handleStatusChange });
+filterContainer.append(statusFilterBar);
 
 fetchCharacters();

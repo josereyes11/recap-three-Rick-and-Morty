@@ -44,6 +44,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
 .card__info {
   display: grid;
   grid-template-columns: auto 1fr;

@@ -23,7 +23,7 @@ export function SearchBar(props) {
   const searchBar = document.createElement("form");
   searchBar.classList.add("search-bar");
   searchBar.innerHTML = `
-  <input name="query" class="search-bar__input" type="text" placeholder="Search for a Wubba Lubba Dub-Dub characters!" aria-label="character name"/>
+  <input name="query" class="search-bar__input" type="text" placeholder="Search for Wubba Lubba Dub-Dub characters!" aria-label="character name"/>
   <button type="button" class="search-bar__clear-button search-bar__clear-button--hidden" aria-label="clear search">
   <img class="search-bar__icon" src="assets/clear__icon.svg" alt=""/>
   </button>
